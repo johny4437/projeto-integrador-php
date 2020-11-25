@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 10px;
+}
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.menu a{
+    margin-right: 8px;
+    background-color: blue;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.menu a span{
+    color: #fff;
+    font-weight: 400;
+
+}
+#table{
+    margin-left: 30%;
+}
