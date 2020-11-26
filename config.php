@@ -1,8 +1,8 @@
 <?php
 $host="localhost";
 $user="root";
-$password="";
-$dbName="crud_clients";
+$password="johny@123";
+$dbName="projeto";
 
 $connection =  new mysqli($host, $user, $password, $dbName);
 
