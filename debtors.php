@@ -36,7 +36,7 @@ require_once('config.php');
 $sql = "SELECT name, cpf FROM client_data INNER JOIN debtors ON(debtors.id_cliente = client_data.cpf) GROUP BY name";
 $result = $connection ->query($sql);
 if($result-> num_rows>0){
-    echo '<table border="1" class="border border-success" id="table">';
+    echo '<table border="3" class="border border-success" id="table">';
     echo "<thead>";
             echo " <tr>";
             echo " <th>Nome</th>";

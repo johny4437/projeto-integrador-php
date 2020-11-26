@@ -34,6 +34,10 @@
 <?php
 session_start();
 
+if($_SESSION['loggedin']=false){
+  echo 'Você não está Logado';
+}else{
+
 if(isset($_SESSION['message'])){
   $msg= $_SESSION['msg_type'];
   echo '<div class="alert alert-success" role="alert">';
@@ -41,7 +45,7 @@ if(isset($_SESSION['message'])){
   unset($_SESSION['message']);
   echo '</div>';
 }
-
+}
 
 
 ?>

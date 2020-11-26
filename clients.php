@@ -39,12 +39,11 @@ require_once('config.php');
 
     if($clients->num_rows>0){
         
-        echo '<table border="1" class="border border-success">';
+        echo '<table border="3" class="border border-success" id="table">';
         echo "<thead>";
                 echo " <tr>";
                 echo " <th>Nome</th>";  
                 echo " <th>CPF</th>";
-                echo " <th>Situação</th>";
                 echo "</tr>";        
         echo "</thead>";
         while($row=$clients->fetch_assoc()){
@@ -52,7 +51,6 @@ require_once('config.php');
             echo"<tbody>";
                 echo "<td>".$row['name']."</td>";
                 echo "<td>".$row['cpf']."</td>";
-                echo "<td><a href='situation.php?cod=$a'>Situação Do cliente</a></td>";
             echo"</tbody>";
         }
     echo '</table>';

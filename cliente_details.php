@@ -20,7 +20,7 @@ require_once('config.php');
     $response = $connection->query($sql);
 
     if($response->num_rows>0){
-        echo'<table border="1" class="border border-success">';
+        echo'<table border="3" class="border border-success" id="table">';
         echo'<thead>';
         echo'<th>Produto</th>';
         echo'<th>Valor</th>';
