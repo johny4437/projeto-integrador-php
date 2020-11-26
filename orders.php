@@ -1,3 +1,16 @@
+<?php
+session_start();
+setcookie("ck_authorized", "true", 0, "/");
+
+if(!$_SESSION['loggedin']):
+  header("location: index.html");
+
+else:
+  $login = $_SESSION["loggedin"];
+endif;
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,7 +66,6 @@
   <input type="submit" class="btn btn-primary" value="Criar ordem">
 </form>
 <?php
-session_start();
 if(isset($_SESSION['message'])){
   echo'<p>';
   echo '<div class="alert alert-success" role="alert">';

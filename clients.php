@@ -1,5 +1,15 @@
 <?php
-require_once('config.php');
+session_start();
+setcookie("ck_authorized", "true", 0, "/");
+
+if(!$_SESSION['loggedin']):
+  header("location: index.html");
+
+else:
+  $login = $_SESSION["loggedin"];
+endif;
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +43,7 @@ require_once('config.php');
     </header>
 
 <?php
-
+    require_once('config.php');
     $sql = "SELECT name,cpf  FROM client_data ORDER BY name ";
     $clients = $connection->query($sql);
 

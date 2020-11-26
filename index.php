@@ -1,3 +1,18 @@
+<?php
+session_start();
+setcookie("ck_authorized", "true", 0, "/");
+
+if(!$_SESSION['loggedin']):
+  header("location: index.html");
+
+else:
+  $login = $_SESSION["loggedin"];
+endif;
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
     <title>Controle de Clientes</title>
 </head>
     
@@ -26,29 +42,16 @@
                 <a href="orders.php">
                     <span>Criar ordem</span>
                 </a>
+                <a href="logout.php">
+                <i class="fas fa-sign-out-alt" color="#FFF"></i>
+                <span>Sair</span>
+                </a>
             </div>
             
         </div>
 
     </header>
-<?php
-session_start();
 
-if($_SESSION['loggedin']=false){
-  echo 'Você não está Logado';
-}else{
-
-if(isset($_SESSION['message'])){
-  $msg= $_SESSION['msg_type'];
-  echo '<div class="alert alert-success" role="alert">';
-  echo $_SESSION['message'];
-  unset($_SESSION['message']);
-  echo '</div>';
-}
-}
-
-
-?>
           
     <form action="insert.php" method="POST" name="formuser">
         <div class="form-row">

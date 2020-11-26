@@ -22,6 +22,9 @@ body{
     color: #fff;
     font-weight: 400;
 
+}.menu a i{
+    color: #fff;
+
 }
 #table{
     margin-left: 35%;
